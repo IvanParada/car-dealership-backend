@@ -8,31 +8,31 @@ import { CreateBrandDto, UpdateBrandDto } from './dto';
 export class BrandsService {
 
   private brands: Brand[] = [
-    {
-      id: uuid(),
-      name: 'Toyota',
-      createdAt: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Subaru',
-      createdAt: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Mazda',
-      createdAt: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Porsche',
-      createdAt: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Mitsubishi',
-      createdAt: Date.now(),
-    },
+    // {
+    //   id: uuid(),
+    //   name: 'Toyota',
+    //   createdAt: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Subaru',
+    //   createdAt: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Mazda',
+    //   createdAt: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Porsche',
+    //   createdAt: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Mitsubishi',
+    //   createdAt: Date.now(),
+    // },
   ];
 
 
@@ -79,5 +79,9 @@ export class BrandsService {
   remove(id: string) {
     this.findOne(id);
     this.brands = this.brands.filter(car => car.id !== id);
+  }
+
+  fillBrandsWithSeedData(brands: Brand[]) {
+    this.brands = brands;
   }
 }
